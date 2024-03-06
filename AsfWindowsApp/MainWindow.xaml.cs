@@ -20,9 +20,16 @@ namespace AsfWindowsApp
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		int n = 0;
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			n++;
+			((Button) sender).Content = n;
 		}
 	}
 }
