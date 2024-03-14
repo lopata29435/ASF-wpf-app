@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="H1Style" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="25"/>
+        <Setter Property="LineHeight" Value="31"/>
+		<Setter Property="FontWeight" Value="Bold"/>
+	</Style>
+
+	<Style x:Key="H3Style" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="20"/>
+		<Setter Property="LineHeight" Value="25"/>
+		<Setter Property="FontWeight" Value="Semibold"/>
+	</Style>
+
+	<Style x:Key="PStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="18"/>
+		<Setter Property="LineHeight" Value="22"/>
+		<Setter Property="FontWeight" Value="Regular"/>
+	</Style>
+
+	<Style x:Key="InpLabelStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="LineHeight" Value="24"/>
+		<Setter Property="FontWeight" Value="Regular"/>
+	</Style>
+
+	<Style x:Key="SubLabelStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="LineHeight" Value="16"/>
+		<Setter Property="FontWeight" Value="Regular"/>
+	</Style>
+
+	<Style x:Key="LabelStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="LineHeight" Value="16"/>
+		<Setter Property="FontWeight" Value="Semibold"/>
+	</Style>
+
+</ResourceDictionary>
+	
