@@ -22,4 +22,27 @@
         </Setter>
     </Style>
 
+    <Style x:Key="Button.Circle.Add" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" Background="{StaticResource Color.Black-500}" BorderBrush="#00000000" CornerRadius="43" Width="86" Height="86">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Path Data="M23.2402 13.7315H13.1602V23.8115H10.2802V13.7315H0.200195V10.8515H10.2802V0.771454H13.1602V10.8515H23.2402V13.7315Z" Fill="White"/>
+                        </ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

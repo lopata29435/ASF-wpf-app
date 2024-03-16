@@ -7,12 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Window.Resources>
-        <ResourceDictionary Source="../../Assets/Fonts/FontStyles.xaml"/>
-    </Window.Resources>
-
     <Grid>
-        <Button Style="{StaticResource H1Style}" Content="Button" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Height="100" Width="180" Click="Button_Click"/>
-
+        <Button Style="{StaticResource Button.Circle.Add}"  Click="Button_Click"/>
     </Grid>
 </Window>

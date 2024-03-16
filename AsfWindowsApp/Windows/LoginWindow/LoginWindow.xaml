@@ -25,12 +25,12 @@
             Height="54" Width="280"
             Style="{StaticResource Button.Rectangle.Grey}">
             </Button>
+
             <Button Content ="Зарегестрироваться" Grid.Row="1" 
             Height="54" Width="280" Margin="0 10 0 10"
             Style="{StaticResource Button.Rectangle.Grey}">
             </Button>
         </Grid>
-
     </Grid>
 
 </Window>

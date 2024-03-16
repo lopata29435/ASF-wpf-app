@@ -18,5 +18,4 @@
     <SolidColorBrush x:Key="Color.Green-300" Color="#4FC045"/>
     <SolidColorBrush x:Key="Color.Green-200" Color="#72CD6A"/>
     <SolidColorBrush x:Key="Color.Green-100" Color="#95D98F"/>
-
 </ResourceDictionary>
