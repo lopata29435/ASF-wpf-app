@@ -28,9 +28,33 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Name="border" BorderThickness="0" Background="{StaticResource Color.Black-500}" BorderBrush="#00000000" CornerRadius="43" Width="86" Height="86">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Path Data="M23.2402 13.7315H13.1602V23.8115H10.2802V13.7315H0.200195V10.8515H10.2802V0.771454H13.1602V10.8515H23.2402V13.7315Z" Fill="White"/>
-                        </ContentPresenter>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Button.Rectangle.SignUp" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" Background="{StaticResource Color.Black-500}" BorderBrush="#00000000" CornerRadius="16" Width="92" Height="32">
+                        <Grid>
+                            <Path Data="M 8.58039 4.38668 H 5.22039 V 7.74668 H 4.26039 V 4.38668 H 0.900391 V 3.42668 H 4.26039 V 0.0666809 H 5.22039 V 3.42668 H 8.58039 V 4.38668 Z" Fill="White" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <TextBlock Text="{TemplateBinding Content}" Style="{StaticResource InpLabelStyle}" Foreground="White" FontSize="12" Margin="36,9,0,0"/>
+                        </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

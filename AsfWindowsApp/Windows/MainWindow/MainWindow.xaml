@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <Button Style="{StaticResource Button.Circle.Add}"  Click="Button_Click"/>
+        <Button Content="Войти" Style="{StaticResource Button.Rectangle.SignUp}"/>
     </Grid>
 </Window>
