@@ -31,5 +31,7 @@ namespace AsfWindowsApp
 			n++;
 			((Button) sender).Content = n;
 		}
-	}
+
+		
+    }
 }

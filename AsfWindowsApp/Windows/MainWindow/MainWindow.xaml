@@ -8,6 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <Button Content="Войти" Style="{StaticResource Button.Rectangle.SignUp}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Войти" Style="{StaticResource Button.Rectangle.SignUp}" Grid.RowSpan="2"/>
+        <Button Content="Войти" Style="{StaticResource Button.Circle.Add}" Margin="348,72,348,58"/>
+        <Button Content="Войти" Style="{StaticResource Button.Rectangle.Grey}" Margin="321,68,267,55" Grid.Row="1"/>
+        <Button Style="{StaticResource Button.Icon.Add}" Grid.RowSpan="2" Margin="-276,20,276,-20"/>
+        <Button Style="{StaticResource Button.Icon.Back}" Grid.RowSpan="2" Margin="-276,60,276,-60"/>
+        <Button Style="{StaticResource Button.Icon.Edit}" Grid.RowSpan="2" Margin="-276,100,276,-100"/>
+        <Button Style="{StaticResource Button.Icon.Delete}" Grid.RowSpan="2" Margin="-276,140,276,-140"/>
     </Grid>
 </Window>
