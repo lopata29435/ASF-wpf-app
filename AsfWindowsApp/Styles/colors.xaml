@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="Color.White" Color="White"/>
+    <SolidColorBrush x:Key="Color.Black" Color="Black"/>
 
     <SolidColorBrush x:Key="Color.Black-500" Color="#363A3E"/>
     <SolidColorBrush x:Key="Color.Black-400" Color="#5E6165"/>
@@ -11,7 +12,7 @@
 
     <SolidColorBrush x:Key="Color.Red-500" Color="#912011"/>
     <SolidColorBrush x:Key="Color.Red-400" Color="#C12B16"/>
-    <SolidColorBrush x:Key="Color.Red-300" Color="#C12B16"/>
+    <SolidColorBrush x:Key="Color.Red-300" Color="#F1361C"/>
     <SolidColorBrush x:Key="Color.Red-200" Color="#F45E49"/>
     <SolidColorBrush x:Key="Color.Red-100" Color="#F78677"/>
 

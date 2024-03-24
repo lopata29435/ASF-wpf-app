@@ -5,19 +5,80 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AsfWindowsApp.Windows.MainWindow.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="540" d:DesignWidth="768"
       Title="LoginPage">
 
-    <Grid Background="White">
-        <TextBlock Style="{StaticResource H1Style}" HorizontalAlignment="Center" Margin="0,80,0,0">Вход</TextBlock>
+    <Grid Background="White" Height="540" Width="768">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="114"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="242"/>
+        </Grid.RowDefinitions>
 
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                   Margin="0, 40, 0, 43">Вход</TextBlock>
+
+        <Grid Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Style="{StaticResource TextBox.Rectangle.small}" />
+            <Grid Grid.Row ="0" Height="94" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row ="0" Text="Почта" VerticalAlignment="Bottom"
+                Foreground="{StaticResource Color.Black}" Style="{StaticResource InpLabelStyle}"/>
+
+                <TextBox Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" />
+
+                <TextBlock Grid.Row ="2" Text="Некорректный формат" VerticalAlignment="Bottom"
+                Foreground="{StaticResource Color.Red-300}" Visibility="Visible" Style="{StaticResource SubLabelStyle}"/>
+            </Grid>
+
+            <Grid Grid.Row ="1" Height="94" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row ="0" Text="Пароль" VerticalAlignment="Bottom"
+                Foreground="{StaticResource Color.Black}" Style="{StaticResource InpLabelStyle}"/>
+
+                <TextBox Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" />
+
+                <TextBlock Grid.Row ="2" Text="Некорректный формат" VerticalAlignment="Bottom"
+                Foreground="{StaticResource Color.Red-300}" Visibility="Visible" Style="{StaticResource SubLabelStyle}"/>
+            </Grid>
         </Grid>
+
+        <Grid Grid.Row ="2" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="122"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Button Content ="Войти" Grid.Row="0" VerticalAlignment="Top" 
+            Height="54" Width="280" Margin="0 68 0 0" IsEnabled="False"
+            Style="{StaticResource Button.Rectangle.Grey}">
+            </Button>
+
+            <TextBlock Grid.Row="1" Style="{StaticResource InpLabelStyle}" HorizontalAlignment="Center" Margin="0, 26, 0, 0">
+                <Hyperlink Style="{StaticResource HyperlinkStyle}" Foreground="{StaticResource Color.Black-300}">Забыли пароль?</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="2" Style="{StaticResource InpLabelStyle}" Foreground="{StaticResource Color.Black-300}"
+                       HorizontalAlignment="Center" Margin="0, 16, 0, 0"> Еще нет аккаунта?
+                <Hyperlink Style="{StaticResource HyperlinkStyle}" Foreground="{StaticResource Color.Black-300}">Создать</Hyperlink>
+            </TextBlock>
+            
+        </Grid>
+
     </Grid>
 </Page>

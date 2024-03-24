@@ -7,7 +7,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Name="border" BorderThickness="0" Background="{StaticResource Color.Black-500}" BorderBrush="#00000000" CornerRadius="15" Padding="0 10 0 10">
-                        <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource InpLabelStyle}" Foreground="White" />
+                        <TextBlock x:Name="text" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource InpLabelStyle}" Foreground="White" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -15,6 +15,10 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
+                            <Setter TargetName="text" Property="Foreground" Value="{StaticResource Color.Black-400}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
