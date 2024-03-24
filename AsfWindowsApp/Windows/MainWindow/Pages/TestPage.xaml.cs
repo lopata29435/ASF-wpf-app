@@ -1,5 +1,4 @@
-﻿using AsfWindowsApp.Windows.MainWindow.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AsfWindowsApp
+namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
 	/// <summary>
-	/// Логика взаимодействия для MainWindow.xaml
+	/// Логика взаимодействия для TestPage.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class TestPage : Page
 	{
-		int n = 0;
-		public MainWindow()
+		public TestPage()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new TestPage());
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			n++;
-			((Button) sender).Content = n;
-		}
-
-		
-    }
+	}
 }

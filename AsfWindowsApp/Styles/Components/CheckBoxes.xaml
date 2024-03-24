@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    
+
+    <Style x:Key="CheckBox.Default" TargetType="CheckBox">
+        <Setter Property="SnapsToDevicePixels" Value="False"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border" Width="20" Height="20" CornerRadius="3" 
+                Background="Transparent"                      
+                BorderBrush="{StaticResource Color.Black-300}"
+                BorderThickness="1">
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Path 
+    
+                  x:Name="CheckMark" 
+                  Fill="White"
+                  Data="M 3.1071 7.58386 L 1.1071 5.58386 L 0.12793 6.56997 L 3.60015 10.0352 C 3.89182 10.32 4.28765 10.3269 4.57932 10.0352 L 12.6488 1.9658 L 11.6696 0.986633 L 3.43349 9.2158 L 3.37099 9.1533 C 3.6696 8.59774 3.55849 8.03524 3.1071 7.58386 Z" />
+                                </Grid>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter
+              VerticalAlignment="Center"
+              HorizontalAlignment="Left"
+              RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource Color.Black-500}" />
+                            <Setter TargetName="Border" Property="BorderThickness" Value="0" />
+                            <Setter TargetName="Border" Property="CornerRadius" Value="4" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color.Black-500}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

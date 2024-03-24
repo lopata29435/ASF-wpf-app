@@ -13,7 +13,8 @@
                 <ResourceDictionary Source="Assets/Fonts/FontStyles.xaml"/>
                 <ResourceDictionary Source="Styles/Components/Buttons.xaml"/>
                 <ResourceDictionary Source="Styles/Components/TextBoxes.xaml"/>
-
+                <ResourceDictionary Source="Styles/Components/CheckBoxes.xaml"/>
+                <ResourceDictionary Source="Styles/Components/RadioButtons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <FontFamily x:Key="SFProDisplay">pack://application:,,,/Assets/Fonts/#SFProDisplay</FontFamily>
