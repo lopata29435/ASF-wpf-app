@@ -9,6 +9,6 @@
       Title="TestPage">
 
     <Grid Background="White">
-        <CheckBox Style="{StaticResource CheckBox.Default}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20"/>
+        <Button Style="{StaticResource Button.Leading.Back}" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>
