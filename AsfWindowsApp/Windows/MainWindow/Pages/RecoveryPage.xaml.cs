@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AsfWindowsApp.Windows.LoginWindow
+namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
 	/// <summary>
-	/// Логика взаимодействия для LoginWindow.xaml
+	/// Логика взаимодействия для RecoveryPage.xaml
 	/// </summary>
-	public partial class LoginWindow : Window
+	public partial class RecoveryPage : Page
 	{
-		public LoginWindow()
+		public RecoveryPage()
 		{
 			InitializeComponent();
 		}

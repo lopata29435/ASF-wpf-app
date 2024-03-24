@@ -12,6 +12,7 @@
                 <ResourceDictionary Source="Assets/Icons.xaml"/>
                 <ResourceDictionary Source="Assets/Fonts/FontStyles.xaml"/>
                 <ResourceDictionary Source="Styles/Components/Buttons.xaml"/>
+                <ResourceDictionary Source="Styles/Components/TextBoxes.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
 
