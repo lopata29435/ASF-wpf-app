@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Values\Route.cs" />
     <Compile Include="Windows\MainWindow\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -164,7 +165,6 @@
     <Folder Include="Handlers\" />
     <Folder Include="Managers\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Values\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

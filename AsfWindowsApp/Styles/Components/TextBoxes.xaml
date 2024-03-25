@@ -12,6 +12,10 @@
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+        <Setter Property="CaretBrush" Value="{StaticResource Color.Black-500}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -19,10 +23,12 @@
                         BorderThickness="{TemplateBinding BorderThickness}" 
                         Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
                         CornerRadius="15" Width="305" Height="42" MaxHeight="42" MaxWidth="305">
-                        
-                        <TextBlock Text="{TemplateBinding Text}" 
-                               HorizontalAlignment="Center" VerticalAlignment="Center" 
-                               Style="{StaticResource InpLabelStyle}"/>
+
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
+                                      VerticalAlignment="Center" HorizontalScrollBarVisibility="Hidden" 
+                                      VerticalScrollBarVisibility="Hidden" 
+                                      HorizontalAlignment="Center"
+                                      />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
@@ -41,5 +47,131 @@
         </Setter>
     </Style>
 
+    <Style x:Key="TextBox.Rectangle.small-error" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Transparent.Red}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.Red-300}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Red-300}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="SFProDisplay"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
+                        CornerRadius="15" Width="305" Height="42" MaxHeight="42" MaxWidth="305">
+
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
+                          VerticalAlignment="Center" HorizontalScrollBarVisibility="Hidden" 
+                          VerticalScrollBarVisibility="Hidden" 
+                          HorizontalAlignment="Center"
+                          />    
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Red-400}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Red-400}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.Red-400}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.code" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Black-100}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.Black-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="MaxLength" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
+                    CornerRadius="8" Width="64" Height="76" MaxHeight="76" MaxWidth="64">
+
+                        <TextBlock Text="{TemplateBinding Text}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Style="{StaticResource H3Style}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Black-500}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Black-500}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.code-red" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Transparent.Red}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.Red-300}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Red-300}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Cycle"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="MaxLength" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
+                    CornerRadius="8" Width="64" Height="76" MaxHeight="76" MaxWidth="64">
+
+                        <TextBlock Text="{TemplateBinding Text}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Style="{StaticResource H3Style}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Red-400}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Color.Red-400}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.Red-400}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

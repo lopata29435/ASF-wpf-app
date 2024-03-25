@@ -70,12 +70,12 @@
             </Button>
 
             <TextBlock Grid.Row="1" Style="{StaticResource InpLabelStyle}" HorizontalAlignment="Center" Margin="0, 26, 0, 0">
-                <Hyperlink Style="{StaticResource HyperlinkStyle}" Foreground="{StaticResource Color.Black-300}">Забыли пароль?</Hyperlink>
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}">Забыли пароль?</Hyperlink>
             </TextBlock>
 
             <TextBlock Grid.Row="2" Style="{StaticResource InpLabelStyle}" Foreground="{StaticResource Color.Black-300}"
                        HorizontalAlignment="Center" Margin="0, 16, 0, 0"> Еще нет аккаунта?
-                <Hyperlink Style="{StaticResource HyperlinkStyle}" Foreground="{StaticResource Color.Black-300}">Создать</Hyperlink>
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}">Создать</Hyperlink>
             </TextBlock>
             
         </Grid>
