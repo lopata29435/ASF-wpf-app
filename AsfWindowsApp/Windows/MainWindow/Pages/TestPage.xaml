@@ -9,6 +9,6 @@
       Title="TestPage">
 
     <Grid Background="White">
-        <Button Style="{StaticResource Button.Leading.Back}" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>

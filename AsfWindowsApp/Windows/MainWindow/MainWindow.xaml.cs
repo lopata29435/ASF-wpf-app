@@ -25,7 +25,7 @@ namespace AsfWindowsApp
 		public MainWindow()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new RecoveryPage());
+			MainFrame.Navigate(new TestPage());
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)

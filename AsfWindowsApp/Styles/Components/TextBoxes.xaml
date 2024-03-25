@@ -174,4 +174,467 @@
         </Setter>
     </Style>
 
+    <Style x:Key="TextBox.Circle.Date.Event" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Red-200}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.White}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="10" Width="20" Height="20">
+                        <TextBlock Text="{TemplateBinding Text}" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                   Style="{StaticResource SubLabelStyle}"
+                                   Margin="0,3,0,0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Circle.Date.CurrentDay" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.White}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10" Width="20" Height="20">
+                        <TextBlock Text="{TemplateBinding Text}" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Style="{StaticResource SubLabelStyle}"
+Margin="0,3,0,0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Circle.Date.Weekend" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-300}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10" Width="20" Height="20">
+                        <TextBlock Text="{TemplateBinding Text}" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           Style="{StaticResource SubLabelStyle}"
+Margin="0,3,0,0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Circle.Date.Default" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                Background="{TemplateBinding Background}"
+                CornerRadius="10" Width="20" Height="20">
+                        <TextBlock Text="{TemplateBinding Text}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       Style="{StaticResource SubLabelStyle}"
+Margin="0,3,0,0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Graph.Planned" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Black-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                Background="{TemplateBinding Background}"
+                CornerRadius="5" Width="328" Height="64">
+                        <StackPanel>
+                            <TextBlock Text="zaplanirovano" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top" 
+                           Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="Ivanov I.I." 
+                           HorizontalAlignment="Left" VerticalAlignment="Top" 
+                           Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="SPEC-00 - 0%" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" 
+                            Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Graph.Complete" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Green-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Green-500}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="{TemplateBinding BorderThickness}" 
+            Background="{TemplateBinding Background}"
+            CornerRadius="5" Width="328" Height="64">
+                        <StackPanel>
+                            <TextBlock Text="vypolneno" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="Ivanov I.I." 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="SPEC-00 - 0%" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Graph.StartingSoon" TargetType="TextBox">
+        <Setter Property="Background" Value="#FFD178"/>
+        <Setter Property="Foreground" Value="#DD590F"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+        BorderThickness="{TemplateBinding BorderThickness}" 
+        Background="{TemplateBinding Background}"
+        CornerRadius="5" Width="328" Height="64">
+                        <StackPanel>
+                            <TextBlock Text="podhodit srok" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="Ivanov I.I." 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="SPEC-00 - 0%" 
+                    HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Graph.Late" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Red-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Red-400}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+    BorderThickness="{TemplateBinding BorderThickness}" 
+    Background="{TemplateBinding Background}"
+    CornerRadius="5" Width="328" Height="64">
+                        <StackPanel>
+                            <TextBlock Text="zaderzhivaetsia" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="Ivanov I.I." 
+               HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="SPEC-00 - 0%" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Graph.InProgress" TargetType="TextBox">
+        <Setter Property="Background" Value="#D0EEFD"/>
+        <Setter Property="Foreground" Value="#0A7ACC"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="{TemplateBinding BorderThickness}" 
+Background="{TemplateBinding Background}"
+CornerRadius="5" Width="328" Height="64">
+                        <StackPanel>
+                            <TextBlock Text="v processe" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="Ivanov I.I." 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="SPEC-00 - 0%" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Main.Planned" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Black-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+            BorderThickness="{TemplateBinding BorderThickness}" 
+            Background="{TemplateBinding Background}"
+            CornerRadius="5" Width="300" Height="64">
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="zaplanirovano" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                                <TextBlock Text="Ivanov I.I." 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                       Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Text="SPEC-00" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="0%" 
+                                HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                Style="{StaticResource PStyle}" Margin="0,8,8,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Main.Complete" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Green-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Green-500}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+        BorderThickness="{TemplateBinding BorderThickness}" 
+        Background="{TemplateBinding Background}"
+        CornerRadius="5" Width="300" Height="64">
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="zaplanirovano" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                                <TextBlock Text="Ivanov I.I." 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Text="SPEC-00" 
+                    HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="0%" 
+                            HorizontalAlignment="Right" VerticalAlignment="Top" 
+                            Style="{StaticResource PStyle}" Margin="0,8,8,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Main.StartingSoon" TargetType="TextBox">
+        <Setter Property="Background" Value="#FFD178"/>
+        <Setter Property="Foreground" Value="#DD590F"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+    BorderThickness="{TemplateBinding BorderThickness}" 
+    Background="{TemplateBinding Background}"
+    CornerRadius="5" Width="300" Height="64">
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="zaplanirovano" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                                <TextBlock Text="Ivanov I.I." 
+               HorizontalAlignment="Left" VerticalAlignment="Top" 
+               Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Text="SPEC-00" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="0%" 
+                        HorizontalAlignment="Right" VerticalAlignment="Top" 
+                        Style="{StaticResource PStyle}" Margin="0,8,8,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Main.Late" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Red-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Red-400}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="{TemplateBinding BorderThickness}" 
+Background="{TemplateBinding Background}"
+CornerRadius="5" Width="300" Height="64">
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="zaplanirovano" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                                <TextBlock Text="Ivanov I.I." 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Text="SPEC-00" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="0%" 
+                    HorizontalAlignment="Right" VerticalAlignment="Top" 
+                    Style="{StaticResource PStyle}" Margin="0,8,8,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Main.InProgress" TargetType="TextBox">
+        <Setter Property="Background" Value="#D0EEFD"/>
+        <Setter Property="Foreground" Value="#0A7ACC"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Text" Value="{Binding Path=YourTextProperty}" />
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="5" Width="300" Height="64">
+                        <Grid>
+                            <StackPanel>
+                                
+                                <TextBlock Text="zaplanirovano"  
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                                <TextBlock Text="Ivanov I.I." 
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Text="SPEC-00" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                       Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            </StackPanel>
+                            <TextBlock Text="0%" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                   Style="{StaticResource PStyle}" Margin="0,8,8,0"/>
+                         </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Status.Late" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Red-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Red-400}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="{TemplateBinding BorderThickness}" 
+Background="{TemplateBinding Background}"
+CornerRadius="5" Width="148" Height="64">
+
+                        <StackPanel>
+                            <TextBlock Text="zaderzhka" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="04.03.2024 -" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Text="10.03.2024" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TextBox.Rectangle.Edit" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.Black-100}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+BorderThickness="{TemplateBinding BorderThickness}" 
+Background="{TemplateBinding Background}"
+CornerRadius="5" Width="328" Height="48">
+
+                        <StackPanel>
+                            <TextBlock Text="sborka materialov" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource LabelStyle}" Margin="8,8,0,0"/>
+                            <TextBlock Text="04.03.2024 -" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Style="{StaticResource SubLabelStyle}" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
