@@ -13,9 +13,6 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
                             <Setter TargetName="text" Property="Foreground" Value="{StaticResource Color.Black-400}" />
@@ -40,9 +37,6 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
-                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -63,9 +57,6 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-200}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -90,9 +81,6 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="icon" Property="Fill" Value="{StaticResource Color.Black-300}" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="icon" Property="Fill" Value="{StaticResource Color.Black-200}" />
-                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -115,9 +103,6 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="icon" Property="Fill" Value="{StaticResource Color.Black-300}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="icon" Property="Fill" Value="{StaticResource Color.Black-200}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -170,6 +155,52 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="icon" Property="Fill" Value="{StaticResource Color.Black-200}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="Button.Leading.Add" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" Background="Transparent" BorderBrush="#00000000" Width="114" Height="50">
+                        <Grid>
+                            <Path Data="M 0.637695 9.24414 C 0.637695 8.97917 0.730794 8.75358 0.916992 8.56738 C 1.11035 8.37402 1.33594 8.27734 1.59375 8.27734 H 8.54395 V 1.33789 C 8.54395 1.08008 8.63704 0.858073 8.82324 0.671875 C 9.00944 0.478516 9.23503 0.381836 9.5 0.381836 C 9.76497 0.381836 9.99056 0.478516 10.1768 0.671875 C 10.3701 0.858073 10.4668 1.08008 10.4668 1.33789 V 8.27734 H 17.4062 C 17.6641 8.27734 17.8861 8.37402 18.0723 8.56738 C 18.2656 8.75358 18.3623 8.97917 18.3623 9.24414 C 18.3623 9.50911 18.2656 9.7347 18.0723 9.9209 C 17.8861 10.1071 17.6641 10.2002 17.4062 10.2002 H 10.4668 V 17.1504 C 10.4668 17.4082 10.3701 17.6302 10.1768 17.8164 C 9.99056 18.0098 9.76497 18.1064 9.5 18.1064 C 9.23503 18.1064 9.00944 18.0098 8.82324 17.8164 C 8.63704 17.6302 8.54395 17.4082 8.54395 17.1504 V 10.2002 H 1.59375 C 1.33594 10.2002 1.11035 10.1071 0.916992 9.9209 C 0.730794 9.7347 0.637695 9.50911 0.637695 9.24414 Z" 
+                                  Fill="#007AFF" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                            <TextBlock Text="{TemplateBinding Content}" Style="{StaticResource InpLabelStyle}" Foreground="#007AFF" 
+                                       FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,3,8,0"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Button.Leading.Back" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" BorderThickness="0" Background="Transparent" BorderBrush="#00000000" Width="90" Height="44">
+                        <Grid>
+                            <Path Data="M 5.61035 11.0068 C 5.61589 10.8132 5.65462 10.6361 5.72656 10.4756 C 5.7985 10.3151 5.90918 10.1602 6.05859 10.0107 L 14.376 1.95898 C 14.6139 1.72103 14.9072 1.60205 15.2559 1.60205 C 15.4883 1.60205 15.6986 1.65739 15.8867 1.76807 C 16.0804 1.87874 16.2326 2.02816 16.3433 2.21631 C 16.4595 2.40446 16.5176 2.61475 16.5176 2.84717 C 16.5176 3.19027 16.3875 3.49186 16.1274 3.75195 L 8.60693 10.9985 L 16.1274 18.2534 C 16.3875 18.519 16.5176 18.8206 16.5176 19.1582 C 16.5176 19.3962 16.4595 19.6092 16.3433 19.7974 C 16.2326 19.9855 16.0804 20.1349 15.8867 20.2456 C 15.6986 20.3618 15.4883 20.4199 15.2559 20.4199 C 14.9072 20.4199 14.6139 20.2982 14.376 20.0547 L 6.05859 12.0029 C 5.90365 11.8535 5.7902 11.6986 5.71826 11.5381 C 5.64632 11.3721 5.61035 11.195 5.61035 11.0068 Z" 
+                              Fill="Black" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                            <TextBlock Text="{TemplateBinding Content}" Style="{StaticResource InpLabelStyle}" Foreground="Black" 
+                                   FontSize="17" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5,8,0"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Color.Black-300}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
