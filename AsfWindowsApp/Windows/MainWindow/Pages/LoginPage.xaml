@@ -34,10 +34,11 @@
                 <TextBlock Grid.Row ="0" Text="Почта" VerticalAlignment="Bottom"
                 Foreground="{StaticResource Color.Black}" Style="{StaticResource InpLabelStyle}"/>
 
-                <TextBox Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" />
+                <TextBox x:Name="EmailTextBox"  Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" 
+                         TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
 
                 <TextBlock Grid.Row ="2" Text="Некорректный формат" VerticalAlignment="Bottom"
-                Foreground="{StaticResource Color.Red-300}" Visibility="Visible" Style="{StaticResource SubLabelStyle}"/>
+                Foreground="{StaticResource Color.Red-300}" Visibility="Collapsed" Style="{StaticResource SubLabelStyle}"/>
             </Grid>
 
             <Grid Grid.Row ="1" Height="94" VerticalAlignment="Top">
@@ -50,10 +51,11 @@
                 <TextBlock Grid.Row ="0" Text="Пароль" VerticalAlignment="Bottom"
                 Foreground="{StaticResource Color.Black}" Style="{StaticResource InpLabelStyle}"/>
 
-                <TextBox Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" />
+                <TextBox x:Name="PasswordTextBox" Grid.Row ="1" Style="{StaticResource TextBox.Rectangle.small}" 
+                         TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown"/>
 
                 <TextBlock Grid.Row ="2" Text="Некорректный формат" VerticalAlignment="Bottom"
-                Foreground="{StaticResource Color.Red-300}" Visibility="Visible" Style="{StaticResource SubLabelStyle}"/>
+                Foreground="{StaticResource Color.Red-300}" Visibility="Collapsed" Style="{StaticResource SubLabelStyle}"/>
             </Grid>
         </Grid>
 
@@ -64,18 +66,21 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
-            <Button Content ="Войти" Grid.Row="0" VerticalAlignment="Top" 
+            <Button x:Name="LoginButton" Click="LoginButton_Click"
+                Content ="Войти" Grid.Row="0" VerticalAlignment="Top" 
             Height="54" Width="280" Margin="0 68 0 0" IsEnabled="False"
             Style="{StaticResource Button.Rectangle.Grey}">
             </Button>
 
             <TextBlock Grid.Row="1" Style="{StaticResource InpLabelStyle}" HorizontalAlignment="Center" Margin="0, 26, 0, 0">
-                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}">Забыли пароль?</Hyperlink>
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}"
+                           Click="ForgotPasswordHyperlink_Click">Забыли пароль?</Hyperlink>
             </TextBlock>
 
             <TextBlock Grid.Row="2" Style="{StaticResource InpLabelStyle}" Foreground="{StaticResource Color.Black-300}"
                        HorizontalAlignment="Center" Margin="0, 16, 0, 0"> Еще нет аккаунта?
-                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}">Создать</Hyperlink>
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}"
+                           Click="RegisterHyperlink_Click">Создать</Hyperlink>
             </TextBlock>
             
         </Grid>

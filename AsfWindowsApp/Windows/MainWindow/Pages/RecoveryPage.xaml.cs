@@ -277,6 +277,9 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 				case PageState.NewPasswordInput:
 					ShowCodeInput();
 					break;
+				case PageState.EmailInput:
+					NavigationService.Navigate(new LoginPage());
+					break;
 				default:
 					break;
 			}
@@ -317,6 +320,10 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			gridCode2.Visibility = Visibility.Collapsed;
 			gridNewPassword.Visibility = Visibility.Visible;
 			gridNewPassword2.Visibility = Visibility.Visible;
+		}
+		private void GoLogin_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new LoginPage());
 		}
 	}
 }

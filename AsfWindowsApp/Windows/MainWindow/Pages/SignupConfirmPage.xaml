@@ -8,7 +8,118 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SignupConfirmPage">
 
-    <Grid>
-        
-    </Grid>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Background="White" Height="540" Width="768">
+
+            <Grid x:Name="mainGrid" Background="White" Height="540" Width="768" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="114"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="230"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row ="0" Style="{StaticResource Button.Icon.Back}" Click="ButtonBack_Click" HorizontalAlignment="Left"></Button>
+
+                <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+Margin="0, 40, 0, 43">Подтверждение регистрации</TextBlock>
+
+                
+
+                <Grid x:Name="gridCode" Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row ="0" TextWrapping="Wrap" TextAlignment="Center"
+                    VerticalAlignment="Bottom" Margin="41,0,41,16"
+                    Foreground="{StaticResource Color.Black}" Style="{StaticResource PStyle}"><Run Text="Пожалуйста, введите код,"/><LineBreak/><Run Text="отправленный вам на"/><Run Language="ru-ru" Text=" "/><Run Text="почту"/></TextBlock>
+
+                    <StackPanel Grid.Row ="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBox x:Name="textBox1" Style ="{StaticResource TextBox.Rectangle.code}" Margin="4" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                        <TextBox x:Name="textBox2" Style ="{StaticResource TextBox.Rectangle.code}" Margin="4" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                        <TextBox x:Name="textBox3" Style ="{StaticResource TextBox.Rectangle.code}" Margin="4" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                        <TextBox x:Name="textBox4" Style ="{StaticResource TextBox.Rectangle.code}" Margin="4" TextChanged="TextBox_TextChanged" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid x:Name="gridCode2" Grid.Row ="2" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name ="textTimer" Grid.Row ="0" TextWrapping="Wrap" TextAlignment="Center"
+                    Margin="0,40,0,0" VerticalAlignment="Top"
+                    Foreground="{StaticResource Color.Black}" 
+                    Style="{StaticResource InpLabelStyle}">
+                    Запросить код повторно через 00:59
+                    </TextBlock>
+
+                    <TextBlock Grid.Row ="1" TextWrapping="Wrap" TextAlignment="Center"
+                    Margin="0,16,0,0" VerticalAlignment="Top"
+                    Foreground="{StaticResource Color.Black}" 
+                    Style="{StaticResource InpLabelStyle}"
+                    IsEnabled="False"
+                    x:Name="HLdiv">
+                        <Hyperlink x:Name ="hyperlinkResend" Style="{StaticResource HyperlinkStyle}" 
+                        TextDecorations="None" IsEnabled="False"
+                        Click="hyperlinkResend_Click"
+                        >Не приходит письмо?</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+            </Grid>
+
+
+            <Grid x:Name="subGrid" Background="White" Height="540" Width="768" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="195"/>
+                    <RowDefinition Height="82"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0, 136, 0, 0"
+                   Style="{StaticResource H1Style}">
+                    <Run>Ваша заявка</Run>
+                    <LineBreak/>
+                    <Run>успешно принята</Run>
+                </TextBlock>
+
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Style="{StaticResource PStyle}">
+                    <Run>Сейчас она находится в модерации.</Run>
+                    <LineBreak/>
+                    <Run>Ожидайте ответ в течение трёх дней.</Run>
+                    <LineBreak/>
+                    <Run>Результат придет на почту:</Run>
+                </TextBlock>
+
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   x:Name="mailblock"
+                   Style="{StaticResource H3Style}">
+                    example@asd.com
+                </TextBlock>
+
+                <Button Content ="В начало" Grid.Row="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Height="46" Width="280" Margin="0 65 0 0"
+                x:Name="buttonBackLogin"
+                Click="ButtonGoStart_Click"
+                Style="{StaticResource Button.Rectangle.Grey}">
+                </Button>
+
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
 </Page>

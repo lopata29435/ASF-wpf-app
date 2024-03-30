@@ -168,6 +168,7 @@
                     VerticalAlignment="Bottom"
                     Height="46" Width="280" Margin="0 0 0 32"
                     x:Name="buttonBackLogin"
+                    Click="GoLogin_Click"
                     Style="{StaticResource Button.Rectangle.Grey}">
             </Button>
 
