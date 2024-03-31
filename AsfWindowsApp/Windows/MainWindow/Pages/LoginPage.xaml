@@ -11,14 +11,15 @@
     <Grid Background="White" Height="540" Width="768">
         <Grid.RowDefinitions>
             <RowDefinition Height="114"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="43*"/>
             <RowDefinition Height="242"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                   Margin="0, 40, 0, 43">Вход</TextBlock>
+        <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Margin="0,40,0,0">Вход</TextBlock>
 
-        <Grid Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Grid Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -59,7 +60,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row ="2" HorizontalAlignment="Center">
+        <Grid Grid.Row ="3" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="122"/>
                 <RowDefinition Height="50"/>
@@ -82,7 +83,7 @@
                 <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}"
                            Click="RegisterHyperlink_Click">Создать</Hyperlink>
             </TextBlock>
-            
+
         </Grid>
 
     </Grid>
