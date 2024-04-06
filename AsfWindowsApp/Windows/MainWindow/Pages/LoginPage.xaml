@@ -8,8 +8,23 @@
       d:DesignHeight="540" d:DesignWidth="768"
       Title="LoginPage">
 
+<<<<<<< HEAD
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid Background="White" Height="540" Width="768">
+=======
+    <Grid Background="White" Height="540" Width="768">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="114"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="242"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Margin="0,40,0,0">Вход</TextBlock>
+
+        <Grid Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" >
+>>>>>>> bf07aeb80509500c9d9bfde1da82e665201c1fff
             <Grid.RowDefinitions>
                 <RowDefinition Height="114"/>
                 <RowDefinition Height="*"/>
@@ -89,4 +104,34 @@
         </Grid>
     </ScrollViewer>
 
+<<<<<<< HEAD
+=======
+        <Grid Grid.Row ="3" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="122"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="LoginButton" Click="LoginButton_Click"
+                Content ="Войти" Grid.Row="0" VerticalAlignment="Top" 
+            Height="54" Width="280" Margin="0 68 0 0" IsEnabled="False"
+            Style="{StaticResource Button.Rectangle.Grey}">
+            </Button>
+
+            <TextBlock Grid.Row="1" Style="{StaticResource InpLabelStyle}" HorizontalAlignment="Center" Margin="0, 26, 0, 0">
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}"
+                           Click="ForgotPasswordHyperlink_Click">Забыли пароль?</Hyperlink>
+            </TextBlock>
+
+            <TextBlock Grid.Row="2" Style="{StaticResource InpLabelStyle}" Foreground="{StaticResource Color.Black-300}"
+                       HorizontalAlignment="Center" Margin="0, 16, 0, 0"> Еще нет аккаунта?
+                <Hyperlink Style="{StaticResource HyperlinkStyleUnderlined}" Foreground="{StaticResource Color.Black-300}"
+                           Click="RegisterHyperlink_Click">Создать</Hyperlink>
+            </TextBlock>
+
+        </Grid>
+
+    </Grid>
+>>>>>>> bf07aeb80509500c9d9bfde1da82e665201c1fff
 </Page>

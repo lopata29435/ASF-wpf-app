@@ -24,5 +24,18 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		{
 			InitializeComponent();
 		}
+
+		private void nameEdit(object sender, RoutedEventArgs e)
+		{
+			gridMain.Visibility = Visibility.Collapsed;
+			gridName.Visibility = Visibility.Visible;
+        }
+
+		private void BackFromNameToMane(object sender, RoutedEventArgs e)
+		{
+			gridName.Visibility = Visibility.Collapsed;
+			Input.Text = string.Empty;
+			gridMain.Visibility = Visibility.Visible;
+		}
 	}
 }

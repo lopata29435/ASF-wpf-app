@@ -5,10 +5,61 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AsfWindowsApp.Windows.MainWindow.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="540" d:DesignWidth="768"
       Title="TestPage">
-
-    <Grid Background="White">
-        <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="White" Height="540" Width="768" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 2" Margin="0,40,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 3" Margin="0,40,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 4" Margin="0,40,0,0"/>
+        </StackPanel>
+        <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+        <Grid Grid.Column="1" Background="White">
+            <Grid Name="gridMain" Margin="22,34,22,0" Visibility="Hidden">
+                <TextBlock Text="Настройки" Style="{StaticResource H1Style}"/>
+                <Border BorderBrush="{StaticResource Color.Black-200}" BorderThickness="1" CornerRadius="16" Margin="0,55,0,0" Height="248" VerticalAlignment="Top">
+                    <StackPanel>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                            <Grid>
+                                <TextBlock Text="Иванов Иван Иванович" Style="{StaticResource H3Style}" Margin="0,4,0,0"/>
+                                <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top" Click="nameEdit"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                            <Grid>
+                                <StackPanel>
+                                    <TextBlock Text="Электронная почта:" Style="{StaticResource LabelStyle}"/>
+                                    <TextBlock Text="example@mail.ru" Style="{StaticResource InpLabelStyle}"/>
+                                </StackPanel>
+                                <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                            <Grid>
+                                <TextBlock Text="Сменить пароль" Style="{StaticResource InpLabelStyle}"/>
+                                <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            </Grid>
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                            <TextBlock Text="Начальник логистического отдела" Style="{StaticResource InpLabelStyle}"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Grid Name="gridName" Visibility="Visible">
+                <TextBlock Text="Редактирование ФИО" Style="{StaticResource H1Style}"  HorizontalAlignment="Center" Margin="0,40,0,0"/>
+                <Grid Width="305" Height="74" VerticalAlignment="Top" Margin="0,134,0,0">
+                    <TextBlock Text="ФИО" Style="{StaticResource InpLabelStyle}"/>
+                    <TextBox Name="Input" Style="{StaticResource TextBox.Rectangle.small}" VerticalAlignment="Bottom"/>
+                </Grid>
+                <Button Style="{StaticResource Button.Rectangle.Grey}" Content="Сохранить" Width="280" Height="46" VerticalAlignment="Bottom" Margin="0,0,0,40"/>
+                <Button Style="{StaticResource Button.Icon.Back}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,40,0,0" Click="BackFromNameToMane"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
