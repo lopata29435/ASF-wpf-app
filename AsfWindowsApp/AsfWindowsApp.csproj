@@ -62,11 +62,17 @@
     <Compile Include="Windows\MainWindow\Pages\RecoveryPage.xaml.cs">
       <DependentUpon>RecoveryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MainWindow\Pages\SettingsEmailPage.xaml.cs">
+      <DependentUpon>SettingsEmailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow\Pages\SettingsNamePage.xaml.cs">
       <DependentUpon>SettingsNamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow\Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow\Pages\SettingsPasswordPage.xaml.cs">
+      <DependentUpon>SettingsPasswordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow\Pages\SignupConfirmPage.xaml.cs">
       <DependentUpon>SignupConfirmPage.xaml</DependentUpon>
@@ -123,11 +129,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\MainWindow\Pages\SettingsEmailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow\Pages\SettingsNamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow\Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow\Pages\SettingsPasswordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

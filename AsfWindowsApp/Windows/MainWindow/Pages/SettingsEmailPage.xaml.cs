@@ -17,25 +17,25 @@ using System.Windows.Shapes;
 namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
 	/// <summary>
-	/// Логика взаимодействия для SettingsNamePage.xaml
+	/// Логика взаимодействия для SettingsEmail.xaml
 	/// </summary>
-	public partial class SettingsNamePage : Page
+	public partial class SettingsEmailPage : Page
 	{
 		string token = "2b34d859415eea9e3e7453f7306e3e71e9140487c371818c4ba0d753a8ab9210";
-		public SettingsNamePage()
+		public SettingsEmailPage()
 		{
 			InitializeComponent();
 		}
-		private async void SaveFio_Click(object sender, RoutedEventArgs e)
+		private async void SaveEmail_Click(object sender, RoutedEventArgs e)
 		{
-			string fio = Input.Text;
+			string email = Input.Text;
 
 
 			HttpClient client = new HttpClient();
 
 			client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");
-			var data = new StringContent($"{{\"name\": \"{fio}\"}}", Encoding.UTF8, "application/json");
-			var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{Values.Route.ENDPOINT}settings/changefio/")
+			var data = new StringContent($"{{\"email\": \"{email}\"}}", Encoding.UTF8, "application/json");
+			var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{Values.Route.ENDPOINT}settings/changeemail/")
 			{
 				Content = data
 			};
@@ -51,7 +51,6 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 				{
 					Save_Button.IsEnabled = false;
 					Input.Style = (Style)FindResource("TextBox.Rectangle.small-error");
-					ErrorText.Visibility = Visibility.Visible;
 				}
 			}
 			catch (Exception ex)
@@ -69,8 +68,8 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			Save_Button.IsEnabled = Input.Text != "";
 			if (Input.Style == (Style)FindResource("TextBox.Rectangle.small-error"))
 			{
+
 				Input.Style = (Style)FindResource("TextBox.Rectangle.small");
-				ErrorText.Visibility = Visibility.Hidden;
 			}
 		}
 	}

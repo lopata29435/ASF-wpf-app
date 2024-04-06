@@ -56,12 +56,12 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 					}
 					else
 					{
-						// 
+						MessageBox.Show($"A server error occurred 1");
 					}
 				}
 				else
 				{
-					// если сервер не отвечает надо что-то сделать
+					MessageBox.Show($"A server error occurred 2");
 				}
 			}
 			catch (Exception ex)
@@ -74,6 +74,16 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		private void NameEdit_Click(object sender, RoutedEventArgs e)
 		{
 			NavigationService.Navigate(new SettingsNamePage());
+		}
+
+		private void EmailEdit_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new SettingsEmailPage());
+		}
+
+		private void PasswordEdit_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new SettingsPasswordPage());
 		}
 	}
 }

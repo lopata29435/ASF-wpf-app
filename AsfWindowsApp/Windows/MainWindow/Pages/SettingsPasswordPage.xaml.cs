@@ -17,32 +17,35 @@ using System.Windows.Shapes;
 namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
 	/// <summary>
-	/// Логика взаимодействия для SettingsNamePage.xaml
+	/// Логика взаимодействия для SettingsPasswordPage.xaml
 	/// </summary>
-	public partial class SettingsNamePage : Page
+	public partial class SettingsPasswordPage : Page
 	{
 		string token = "2b34d859415eea9e3e7453f7306e3e71e9140487c371818c4ba0d753a8ab9210";
-		public SettingsNamePage()
+		public SettingsPasswordPage()
 		{
 			InitializeComponent();
 		}
-		private async void SaveFio_Click(object sender, RoutedEventArgs e)
+		private async void SavePassword_Click(object sender, RoutedEventArgs e)
 		{
-			string fio = Input.Text;
+			string password = Password.Text;
+			string new_password = NewPassword.Text;
+			string confirm_password = ConfirmPassword.Text;
 
 
 			HttpClient client = new HttpClient();
 
 			client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");
-			var data = new StringContent($"{{\"name\": \"{fio}\"}}", Encoding.UTF8, "application/json");
-			var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{Values.Route.ENDPOINT}settings/changefio/")
+			var data = new StringContent($"{{\"password\": \"{password}\",\"new_password\": \"{new_password}\",\"confirm_password\": \"{confirm_password}\"}}", Encoding.UTF8, "application/json");
+			var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{Values.Route.ENDPOINT}settings/changepassword/")
 			{
 				Content = data
 			};
 			try
 			{
 				HttpResponseMessage response = await client.SendAsync(request);
-
+				Text1.Text = response.StatusCode.ToString();
+				Text2.Text = await response.Content.ReadAsStringAsync();
 				if (response.IsSuccessStatusCode)
 				{
 					NavigationService.Navigate(new SettingsPage());
@@ -50,7 +53,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 				else
 				{
 					Save_Button.IsEnabled = false;
-					Input.Style = (Style)FindResource("TextBox.Rectangle.small-error");
+					Password.Style = (Style)FindResource("TextBox.Rectangle.small-error");
 					ErrorText.Visibility = Visibility.Visible;
 				}
 			}
@@ -66,10 +69,10 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 
 		private void Input_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			Save_Button.IsEnabled = Input.Text != "";
-			if (Input.Style == (Style)FindResource("TextBox.Rectangle.small-error"))
+			Save_Button.IsEnabled = Password.Text != "";
+			if (Password.Style == (Style)FindResource("TextBox.Rectangle.small-error"))
 			{
-				Input.Style = (Style)FindResource("TextBox.Rectangle.small");
+				Password.Style = (Style)FindResource("TextBox.Rectangle.small");
 				ErrorText.Visibility = Visibility.Hidden;
 			}
 		}
