@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿<Page x:Class="AsfWindowsApp.Windows.MainWindow.Pages.LoginPage"
+<Page x:Class="AsfWindowsApp.Windows.MainWindow.Pages.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -89,6 +88,3 @@
         </Grid>
     </ScrollViewer>
 </Page>
-=======
-
->>>>>>> 16db2402c5263bb5dec93a876bd2521fa233ea70
