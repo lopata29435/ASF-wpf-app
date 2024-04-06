@@ -92,7 +92,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		{
 			if(ValidateFields())
 			{
-				MessageBox.Show("Заявка отправлена!");
+				NavigationService.Navigate(new SignupConfirmPage(NameTextBox.Text, EmailTextBox.Text, PasswordTextBox.Text));
 			}
 		}
 	}

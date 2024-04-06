@@ -14,15 +14,20 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AsfWindowsApp.Windows.MainWindow.Pages
-{
-	/// <summary>
-	/// Логика взаимодействия для StartPage.xaml
-	/// </summary>
-	public partial class StartPage : Page
+{	public partial class StartPage : Page
 	{
 		public StartPage()
 		{
 			InitializeComponent();
+		}
+
+		private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new LoginPage());
+		}
+		private void ButtonReg_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(new SignupPage());
 		}
 	}
 }

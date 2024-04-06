@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -23,18 +24,27 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		private readonly HttpClient httpClient;
 		private DispatcherTimer timer;
 		private int remainingTimeInSeconds = 59;
-		private string userEmail;
+		private string userEmail, userName, userPassword;
 
-		public SignupConfirmPage(string email)
+		public SignupConfirmPage(string name, string email, string password)
 		{
 			InitializeComponent();
 			httpClient = new HttpClient();
 			timer = new DispatcherTimer();
 			timer.Interval = TimeSpan.FromSeconds(1);
 			timer.Tick += Timer_Tick;
+			userName = name;
 			userEmail = email;
+			userPassword = password;
 
+			Loaded += SignupConfirmPage_Loaded;
+		}
+		private async void SignupConfirmPage_Loaded(object sender, RoutedEventArgs e)
+		{
+			
 			ShowCodeInput();
+			timer.Start();
+			await SendPasswordRecoveryRequestAsync();
 
 		}
 		private void Timer_Tick(object sender, EventArgs e)
@@ -59,17 +69,16 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		private async void hyperlinkResend_Click(object sender, RoutedEventArgs e)
 		{
 			remainingTimeInSeconds = 60;
-			timer.Start();
 			HLdiv.IsEnabled = false;
 			hyperlinkResend.IsEnabled = false;
-			await SendPasswordRecoveryRequestAsync(userEmail);
+			await SendPasswordRecoveryRequestAsync();
 		}
-		private async Task<bool> SendPasswordRecoveryRequestAsync(string email)
+		private async Task<bool> SendPasswordRecoveryRequestAsync()
 		{
 			try
 			{
-				string json = $"{{\"email\": \"{email}\"}}";
-				string t = $"{Values.Route.ENDPOINT}password_recovery/sendemail/";
+				string json = $"{{\"name\": \"{userName}\",\n\"email\": \"{userEmail}\",\n\"password\": \"{userPassword}\",\n\"password\": \"{userPassword}\"}}";
+				string t = $"{Values.Route.ENDPOINT}register/";
 				var response = await httpClient.PostAsync(t, new StringContent(json, Encoding.UTF8, "application/json"));
 
 				if (response.IsSuccessStatusCode)
@@ -141,9 +150,13 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		{
 			try
 			{
-				string json = $"{{\"code\": \"{code}\",\n \"email\": \"{userEmail}\"}}";
-				string apiUrl = $"{Values.Route.ENDPOINT}password_recovery/checkemail/";
-				var response = await httpClient.PostAsync(apiUrl, new StringContent(json, Encoding.UTF8, "application/json"));
+				var json = new StringContent($"{{\"email\": \"{userEmail}\",\n\"code\": \"{code}\"}}", Encoding.UTF8, "application/json");
+				string apiUrl = $"{Values.Route.ENDPOINT}activate/";
+				var request = new HttpRequestMessage(new HttpMethod("PATCH"), apiUrl)
+				{
+					Content = json
+				};
+				var response = await httpClient.SendAsync(request);
 
 				if (response.IsSuccessStatusCode)
 				{
