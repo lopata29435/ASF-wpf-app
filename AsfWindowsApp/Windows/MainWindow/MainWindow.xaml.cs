@@ -25,15 +25,7 @@ namespace AsfWindowsApp
 		public MainWindow()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new StartPage());
+			MainFrame.Navigate(new SettingsPage());
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			n++;
-			((Button) sender).Content = n;
-		}
-
-		
     }
 }

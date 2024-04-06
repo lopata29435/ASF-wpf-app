@@ -59,7 +59,7 @@
                     <TextBlock Text="ФИО" Style="{StaticResource InpLabelStyle}"/>
                     <TextBox Name="Input" Style="{StaticResource TextBox.Rectangle.small}" VerticalAlignment="Bottom"/>
                 </Grid>
-                <Button Style="{StaticResource Button.Rectangle.Grey}" Content="Сохранить" Width="280" Height="46" VerticalAlignment="Bottom" Margin="0,0,0,40" Click="SaveFio_Click"/>
+                <Button Style="{StaticResource Button.Rectangle.Grey}" Content="Сохранить" Width="280" Height="46" VerticalAlignment="Bottom" Margin="0,0,0,40" />
                 <Button Style="{StaticResource Button.Icon.Back}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,40,0,0" Click="BackFromNameToMane"/>
             </Grid>
         </Grid>

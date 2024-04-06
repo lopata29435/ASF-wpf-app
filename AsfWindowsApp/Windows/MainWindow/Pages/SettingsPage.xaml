@@ -1,0 +1,54 @@
+﻿<Page x:Class="AsfWindowsApp.Windows.MainWindow.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AsfWindowsApp.Windows.MainWindow.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="768"
+      Title="SettingsPage">
+    <Grid Background="White" Height="540" Width="768" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 2" Margin="0,40,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 3" Margin="0,40,0,0"/>
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 4" Margin="0,40,0,0"/>
+        </StackPanel>
+        <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+        <Grid Grid.Column="1" Background="White" Margin="22,34,22,0">
+            <TextBlock Text="Настройки" Style="{StaticResource H1Style}"/>
+            <Border BorderBrush="{StaticResource Color.Black-200}" BorderThickness="1" CornerRadius="16" Margin="0,55,0,0" Height="248" VerticalAlignment="Top">
+                <StackPanel>
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                        <Grid>
+                            <TextBlock Name="FioText" Text="" Style="{StaticResource H3Style}" Margin="0,4,0,0"/>
+                            <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top" Click="NameEdit_Click"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                        <Grid>
+                            <StackPanel>
+                                <TextBlock Text="Электронная почта:" Style="{StaticResource LabelStyle}"/>
+                                <TextBlock Name="EmailText" Text="" Style="{StaticResource InpLabelStyle}"/>
+                            </StackPanel>
+                            <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                        <Grid>
+                            <TextBlock Text="Сменить пароль" Style="{StaticResource InpLabelStyle}"/>
+                            <Button Style="{StaticResource Button.Icon.Edit}" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource Color.Black-200}" Margin="24,16,24,0" Height="42">
+                        <TextBlock Name="RoleText" Text="" Style="{StaticResource InpLabelStyle}"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

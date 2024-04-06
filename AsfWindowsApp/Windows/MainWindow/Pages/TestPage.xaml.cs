@@ -35,27 +35,6 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			gridMain.Visibility = Visibility.Visible;
 		}
 		
-		private async void SaveFio_Click(object sender, RoutedEventArgs e)
-		{
-			string fio = Input.Text;
-			
-
-			HttpClient client = new HttpClient();
-			
-			client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");
-			var data = new StringContent($"{{\"name\": \"{fio}\"}}", Encoding.UTF8, "application/json");
-			var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"{Values.Route.ENDPOINT}settings/changefio/")
-			{
-				Content = data
-			};
-
-			HttpResponseMessage response = await client.SendAsync(request);
-
-			string responseBody = await response.Content.ReadAsStringAsync();
-
-			test1.Text = response.StatusCode.ToString();
-			test2.Text = responseBody;
-			
-		}
+		
     }
 }
