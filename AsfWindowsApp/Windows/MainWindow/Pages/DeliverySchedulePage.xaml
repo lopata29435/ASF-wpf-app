@@ -5,10 +5,96 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AsfWindowsApp.Windows.MainWindow.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="540" d:DesignWidth="768"
       Title="DeliverySchedulePage">
 
-    <Grid >
-        
-    </Grid>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Background="White" Height="540" Width="768">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
+                <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"/>
+                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 2" Margin="0,40,0,0"/>
+                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 3" Margin="0,40,0,0"/>
+                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 4" Margin="0,40,0,0"/>
+            </StackPanel>
+            <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="71"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                Margin="23, 43, 0, 0">График поставок</TextBlock>
+
+                <TextBlock Grid.Row ="1" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="43, 24, 0, 0">Март</TextBlock>
+
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" 
+                            Height="40px" Orientation="Horizontal" Margin="43, 0, 0, 0">
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">06</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">07</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.CurrentDay}">09</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">13</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">14</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">20</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">21</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">27</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">28</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
+                    <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">31</TextBox>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"
+                              Margin="43, 0, 0, 0">
+                    <WrapPanel Orientation="Vertical">
+                        <TextBox Width="200" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox Width="50" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                        <TextBox  Style="{StaticResource TextBox.Rectangle.Graph.Complete}"></TextBox>
+                    </WrapPanel>
+                </ScrollViewer>
+
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
 </Page>

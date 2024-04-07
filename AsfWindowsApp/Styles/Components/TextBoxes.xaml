@@ -302,7 +302,7 @@ Margin="0,3,0,0"/>
                     <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
             BorderThickness="{TemplateBinding BorderThickness}" 
             Background="{TemplateBinding Background}"
-            CornerRadius="5" Width="328" Height="64">
+            CornerRadius="5" Height="64">
                         <StackPanel>
                             <TextBlock Text="vypolneno" 
                        HorizontalAlignment="Left" VerticalAlignment="Top" 

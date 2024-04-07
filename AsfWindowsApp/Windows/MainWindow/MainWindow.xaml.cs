@@ -25,7 +25,7 @@ namespace AsfWindowsApp
 		public MainWindow()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new StartPage());
+			MainFrame.Navigate(new DeliverySchedulePage());
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
