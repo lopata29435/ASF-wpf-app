@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 
 namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
-	public partial class DeliverySchedulePage : Page
+	public partial class ProjectsPage : Page
 	{
-		public DeliverySchedulePage()
+		public ProjectsPage()
 		{
 			InitializeComponent();
 		}

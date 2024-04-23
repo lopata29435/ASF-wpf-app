@@ -17,10 +17,14 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"/>
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 2" Margin="0,40,0,0"/>
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 3" Margin="0,40,0,0"/>
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Кнопка 4" Margin="0,40,0,0"/>
+                <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"
+                        Click="Projects_Click"/>
+                <Button Style="{StaticResource Button.Bar.Schedule}" Content="График" Margin="0,40,0,0" IsEnabled="False"
+                        Click="Schedule_Click"/>
+                <Button Style="{StaticResource Button.Bar.Request}" Content="Запросы" Margin="0,40,0,0"
+                        Click="Requests_Click"/>
+                <Button Style="{StaticResource Button.Bar.Settings}" Content="Настройки" Margin="0,40,0,0"
+                        Click="Settings_Click"/>
             </StackPanel>
             <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
 

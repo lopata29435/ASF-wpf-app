@@ -4,7 +4,8 @@
     <SolidColorBrush x:Key="Color.White" Color="White"/>
     <SolidColorBrush x:Key="Color.Black" Color="Black"/>
     <SolidColorBrush x:Key="Color.Transparent.Red" Color="#19F1361C"/>
-
+    <SolidColorBrush x:Key="Color.Special.Blue" Color="#007AFF"/>
+    
     <SolidColorBrush x:Key="Color.Black-500" Color="#363A3E"/>
     <SolidColorBrush x:Key="Color.Black-400" Color="#5E6165"/>
     <SolidColorBrush x:Key="Color.Black-300" Color="#86898B"/>

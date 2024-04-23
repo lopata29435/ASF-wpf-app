@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 
 namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
-	public partial class DeliverySchedulePage : Page
+	public partial class RequestsPage : Page
 	{
-		public DeliverySchedulePage()
+		public RequestsPage()
 		{
 			InitializeComponent();
 		}
@@ -37,5 +37,6 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		{
 			NavigationService.Navigate(new SettingsPage());
 		}
+
 	}
 }

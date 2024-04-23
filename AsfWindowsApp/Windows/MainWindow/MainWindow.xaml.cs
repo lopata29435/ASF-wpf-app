@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 
 namespace AsfWindowsApp
 {
-	/// <summary>
-	/// Логика взаимодействия для MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
 		int n = 0;
 		public MainWindow()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new DeliverySchedulePage());
+			MainFrame.Navigate(new StartPage());
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			n++;
-			((Button) sender).Content = n;
-		}
-
-		
     }
 }

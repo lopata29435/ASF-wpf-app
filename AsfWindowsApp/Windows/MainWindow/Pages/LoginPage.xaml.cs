@@ -87,7 +87,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 
 		private void HandleSuccessfulLogin()
 		{
-			MessageBox.Show("Login successful!");
+			NavigationService.Navigate(new ProjectsPage());
 		}
 		private async void TextBox_KeyDown(object sender, KeyEventArgs e)
 		{

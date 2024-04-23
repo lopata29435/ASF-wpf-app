@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+
+using System.Net.Http;
+
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+
+
 
 namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
@@ -20,6 +16,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	/// </summary>
 	public partial class TestPage : Page
 	{
+		string token = "2b34d859415eea9e3e7453f7306e3e71e9140487c371818c4ba0d753a8ab9210";
 		public TestPage()
 		{
 			InitializeComponent();
@@ -37,5 +34,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			Input.Text = string.Empty;
 			gridMain.Visibility = Visibility.Visible;
 		}
-	}
+		
+		
+    }
 }
