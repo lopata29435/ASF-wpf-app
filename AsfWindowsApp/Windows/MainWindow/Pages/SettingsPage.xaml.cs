@@ -20,7 +20,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	/// </summary>
 	public partial class SettingsPage : Page
 	{
-		string token = "2b34d859415eea9e3e7453f7306e3e71e9140487c371818c4ba0d753a8ab9210";
+		string token = "394f657232f931de37e3c26626b9ef57da0262f38a046f501bb2ddf6e7dbb192";
 		public SettingsPage()
 		{
 			Loaded += YourPage_Loaded;
