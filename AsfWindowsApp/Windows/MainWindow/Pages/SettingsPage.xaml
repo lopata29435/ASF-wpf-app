@@ -24,7 +24,7 @@
                         Click="Settings_Click"/>
         </StackPanel>
         <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
-        <Grid Grid.Column="1" Background="White" Margin="22,34,22,0">
+        <Grid Grid.Column="1" Background="White" Margin="22,43,22,0">
             <TextBlock Text="Настройки" Style="{StaticResource H1Style}"/>
             <Border BorderBrush="{StaticResource Color.Black-200}" BorderThickness="1" CornerRadius="16" Margin="0,55,0,0" Height="248" VerticalAlignment="Top">
                 <StackPanel>

@@ -72,6 +72,9 @@
     <Compile Include="Windows\MainWindow\Pages\RecoveryPage.xaml.cs">
       <DependentUpon>RecoveryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MainWindow\Pages\RequestPage.xaml.cs">
+      <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow\Pages\RequestsPage.xaml.cs">
       <DependentUpon>RequestsPage.xaml</DependentUpon>
     </Compile>
@@ -148,10 +151,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow\Pages\RecoveryPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\MainWindow\Pages\RequestsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

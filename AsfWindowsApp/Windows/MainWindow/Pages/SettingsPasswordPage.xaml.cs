@@ -32,13 +32,6 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			string new_password = NewPassword.Text;
 			string confirm_password = ConfirmPassword.Text;
 
-			/*if (new_password != confirm_password)
-			{
-				ConfirmPassword.Style = (Style)FindResource("TextBox.Rectangle.small-error");
-				ConfirmErrorText.Visibility = Visibility.Visible;
-			}*/
-			//if (new_password.Count() < 8 || !new_password.Any(x => 'A' <= x && x <= 'Z') || !new_password.Any(x => '0' <= x && x <= '9') || !new_password.Any(x => '0' <= x && x <= '9'))
-
 			HttpClient client = new HttpClient();
 
 			client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");

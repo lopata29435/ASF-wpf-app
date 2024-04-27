@@ -1,5 +1,4 @@
-﻿using AsfWindowsApp.Windows.MainWindow.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AsfWindowsApp
+namespace AsfWindowsApp.Windows.MainWindow.Pages
 {
-	public partial class MainWindow : Window
+	/// <summary>
+	/// Логика взаимодействия для RequestPage.xaml
+	/// </summary>
+	public partial class RequestPage : Page
 	{
-		int n = 0;
-		public MainWindow()
+		public RequestPage()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new SettingsPage());
 		}
-    }
+	}
 }
