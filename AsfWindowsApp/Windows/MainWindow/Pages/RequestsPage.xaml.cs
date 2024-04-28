@@ -19,7 +19,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	{
 		public RequestsPage()
 		{
-			InitializeComponent();
+			InitializeComponent(); 
 		}
 		private void Projects_Click(object sender, RoutedEventArgs e)
 		{
@@ -40,3 +40,4 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 
 	}
 }
+

@@ -39,9 +39,9 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			string[] output = new string[3];
 			HttpClient client = new HttpClient();
 			client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");
-			var response = await client.GetAsync($"{Values.Route.ENDPOINT}settings/about/");
 			try
 			{
+				var response = await client.GetAsync($"{Values.Route.ENDPOINT}settings/about/");
 				if (response.IsSuccessStatusCode)
 				{
 					var responseBody = await response.Content.ReadAsStringAsync();

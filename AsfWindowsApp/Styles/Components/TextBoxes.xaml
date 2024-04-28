@@ -645,4 +645,50 @@ CornerRadius="5" Width="328" Height="48">
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="TextBox.Request" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource Color.White}"/>
+        <Setter Property="Foreground" Value="{StaticResource Color.Black-500}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Text" Value="Request"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="16" Height="257">
+
+                        <StackPanel Margin="24,16,24,16">
+                            <TextBlock Name="ab" Text="{TemplateBinding Text}" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource H3Style}"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}"/>
+                            <TextBlock Text="aaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}" FontWeight="Bold" Margin="0,16,0,0"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}" FontWeight="Bold" Margin="0,16,0,0"/>
+                            <TextBlock Text="aaaaaaaaaaaaaaaaaaaaaaa" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                        Style="{StaticResource InpLabelStyle}"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -5,31 +5,38 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AsfWindowsApp.Windows.MainWindow.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="540" d:DesignWidth="768"
       Title="RequestsPage">
 
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Grid Background="White" Height="540" Width="768">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"
-                        Click="Projects_Click"/>
-                <Button Style="{StaticResource Button.Bar.Schedule}" Content="График" Margin="0,40,0,0"
-                        Click="Schedule_Click"/>
-                <Button Style="{StaticResource Button.Bar.Request}" Content="Запросы" Margin="0,40,0,0" IsEnabled="False"
-                        Click="Requests_Click"/>
-                <Button Style="{StaticResource Button.Bar.Settings}" Content="Настройки" Margin="0,40,0,0"
-                        Click="Settings_Click"/>
-            </StackPanel>
-            <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
-
-            
-
+    <Grid Background="White" Height="540" Width="768" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"
+                    Click="Projects_Click"/>
+            <Button Style="{StaticResource Button.Bar.Schedule}" Content="График" Margin="0,40,0,0"
+                    Click="Schedule_Click"/>
+            <Button Style="{StaticResource Button.Bar.Request}" Content="Запросы" Margin="0,40,0,0" IsEnabled="False"
+                    Click="Requests_Click"/>
+            <Button Style="{StaticResource Button.Bar.Settings}" Content="Настройки" Margin="0,40,0,0"
+                    Click="Settings_Click"/>
+        </StackPanel>
+        <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+        <Grid Grid.Column="1" Background="White" Margin="22,43,22,0">
+            <TextBlock Text="Запросы" Style="{StaticResource H1Style}"/>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,47,0,0">
+                <StackPanel>
+                    <StackPanel>
+                        <TextBox Name="qw" Style="{StaticResource TextBox.Request}" Margin="0,8,0,0" />
+                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
+                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
+                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </Page>
+
