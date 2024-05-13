@@ -27,16 +27,17 @@
         <Grid Grid.Column="1" Background="White" Margin="22,43,22,0">
             <TextBlock Text="Запросы" Style="{StaticResource H1Style}"/>
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,47,0,0">
-                <StackPanel>
-                    <StackPanel>
-                        <TextBox Name="qw" Style="{StaticResource TextBox.Request}" Margin="0,8,0,0" />
-                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
-                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
-                        <TextBox Style="{StaticResource TextBox.Request}" Margin="0,8,0,0"/>
+                <Grid>
+                    <StackPanel Name="mainStackPanel">
+                        
                     </StackPanel>
-                </StackPanel>
+                    <StackPanel Name="subStackPanel">
+                        
+                    </StackPanel>
+                </Grid>
             </ScrollViewer>
         </Grid>
+        <Button Style="{StaticResource Button.Circle.Add}" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,36,28" Click="NewRequest_Click"/>
     </Grid>
 </Page>
 
