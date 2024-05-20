@@ -42,6 +42,8 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	public partial class RequestsPage : Page
 	{
 		const string token = "aad17cda65915d890d27ba38c9129ca4926944cbda6644ad6d883f2088c72e47";
+		List<RequestBlock> blocks;
+		List<Button> buttons;	
 		public RequestsPage()
 		{
 			InitializeComponent();
@@ -65,8 +67,8 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 					if (response.IsSuccessStatusCode)
 					{
 						var json = await response.Content.ReadAsStringAsync();
-						var blocks = JsonConvert.DeserializeObject<List<RequestBlock>>(json);
-						SuccesRequestsLoad(blocks);
+						blocks = JsonConvert.DeserializeObject<List<RequestBlock>>(json);
+						SuccesRequestsLoad();
 					}
 					else
 					{
@@ -79,13 +81,8 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 				}
 			}
 		}
-		private async Task LoadRequestsAsyncTest()
-		{
-			var json = File.ReadAllText("test.txt");
-			var blocks = JsonConvert.DeserializeObject<List<RequestBlock>>(json);
-			SuccesRequestsLoad(blocks);
-		}
-		private void SuccesRequestsLoad(List<RequestBlock> blocks)
+
+		private void SuccesRequestsLoad()
 		{
 			int i = 1;
 			foreach (RequestBlock block in blocks)
@@ -147,6 +144,13 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 				textBlock.Text = block.Resolution;
 				textBlock.Style = (Style)FindResource("InpLabelStyle");
 
+				Button button = new Button();
+				subStackPanel.Children.Add(button);
+				button.Style = (Style)FindResource("Button.Icon.Edit");
+				button.Margin = new Thickness(0, 24, 24, 205);
+				button.Click += ChangeRequest_Click;
+				buttons.Add(button);
+
 				i++;
 			}
 		}
@@ -175,6 +179,15 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		private void NewRequest_Click(object sender, RoutedEventArgs e)
 		{
 			NavigationService.Navigate(new NewRequestPage());
+		}
+
+		private void ChangeRequest_Click(object sender, RoutedEventArgs e)
+		{
+			NavigationService.Navigate(
+				new ChangeRequestPage(
+					blocks[buttons.FindIndex((x) => x == ((Button)sender))]
+					)
+				);
 		}
 	}
 }

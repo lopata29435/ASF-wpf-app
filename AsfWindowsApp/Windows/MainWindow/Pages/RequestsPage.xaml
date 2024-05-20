@@ -31,7 +31,7 @@
                     <StackPanel Name="mainStackPanel">
                         
                     </StackPanel>
-                    <StackPanel Name="subStackPanel">
+                    <StackPanel Name="subStackPanel" HorizontalAlignment="Right">
                         
                     </StackPanel>
                 </Grid>
