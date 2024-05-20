@@ -8,128 +8,210 @@
       d:DesignHeight="540" d:DesignWidth="768"
       Title="DeliverySchedulePage">
 
-    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Grid Background="White" Height="540" Width="768">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
-                <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"
+    <Grid Background="White" Height="540" Width="768">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0">
+            <Button Style="{StaticResource Button.Bar.Projects}" Content="Проекты" Margin="0,85,0,0"
                         Click="Projects_Click"/>
-                <Button Style="{StaticResource Button.Bar.Schedule}" Content="График" Margin="0,40,0,0" IsEnabled="False"
+            <Button Style="{StaticResource Button.Bar.Schedule}" Content="График" Margin="0,40,0,0" IsEnabled="False"
                         Click="Schedule_Click"/>
-                <Button Style="{StaticResource Button.Bar.Request}" Content="Запросы" Margin="0,40,0,0"
+            <Button Style="{StaticResource Button.Bar.Request}" Content="Запросы" Margin="0,40,0,0"
                         Click="Requests_Click"/>
-                <Button Style="{StaticResource Button.Bar.Settings}" Content="Настройки" Margin="0,40,0,0"
+            <Button Style="{StaticResource Button.Bar.Settings}" Content="Настройки" Margin="0,40,0,0"
                         Click="Settings_Click"/>
-            </StackPanel>
-            <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <Border Grid.Column="1" Background="{StaticResource Color.Black-200}" Width="1" HorizontalAlignment="Left"/>
+        
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="71"/>
+                <RowDefinition Height="*"/>
+                
+            </Grid.RowDefinitions>
 
-            <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="71"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row ="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+            <TextBlock Grid.Row="0" Style="{StaticResource H1Style}" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                 Margin="23, 43, 0, 0">График поставок</TextBlock>
 
-                <ScrollViewer Grid.Row="1">
-                    <Grid Grid.Column="2" Width="850">
+            <ScrollViewer   Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid x:Name="TimeLine" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="600"/>
+                            <ColumnDefinition Width="600"/>
+                            <ColumnDefinition Width="600"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Width="850" Margin="0, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row ="0" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                             Margin="0, 24, 0, 0">Март</TextBlock>
+
+
+                            <StackPanel x:Name="Dates" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
+                            Height="40px" Orientation="Horizontal" Margin="0, 0, 0, 0">
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">06</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">07</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">09</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">13</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">14</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">20</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">21</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">27</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">28</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Column="1" Width="850" Margin="0, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row ="0" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                             Margin="0, 24, 0, 0">Март</TextBlock>
+
+
+                            <StackPanel x:Name="Dates2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
+                             Height="40px" Orientation="Horizontal" Margin="0, 0, 0, 0">
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">06</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">07</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">09</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">13</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">14</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">20</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">21</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">27</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">28</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Column="2" Width="850" Margin="0, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row ="0" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            Margin="0, 24, 0, 0">Март</TextBlock>
+
+
+                            <StackPanel x:Name="Dates3" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
+                            Height="40px" Orientation="Horizontal" Margin="0, 0, 0, 0">
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">06</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">07</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">09</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">13</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">14</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">20</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">21</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">27</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">28</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
+                                <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid x:Name="Deliveries" Grid.Row="1" 
+                          HorizontalAlignment="Left" Margin="43, 0, 0, 0"  
+                          VerticalAlignment="Top">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
 
-
-                        <TextBlock Grid.Row ="0" Style="{StaticResource LabelStyle}" VerticalAlignment="Top" HorizontalAlignment="Left"
-                        Margin="43, 24, 0, 0">Март</TextBlock>
-
-
-                        <StackPanel x:Name="Dates" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" 
-                        Height="40px" Orientation="Horizontal" Margin="43, 0, 0, 0">
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">06</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">07</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.CurrentDay}">09</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">13</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">14</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">20</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">21</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">27</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">28</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">31</TextBox>
-                            
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">01</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">02</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">03</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">04</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">05</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">06</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">07</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">08</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.CurrentDay}">09</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">10</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">11</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">12</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">13</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">14</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">15</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">16</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">17</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">18</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">19</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">20</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">21</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">22</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">23</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">24</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">25</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">26</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">27</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Weekend}">28</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">29</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">30</TextBox>
-                            <TextBox Style="{StaticResource TextBox.Circle.Date.Default}">31</TextBox>
-                        </StackPanel>
-
-                        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"
-                        Margin="43, 0, 0, 0">
-                            <Grid x:Name="Deliveries" HorizontalAlignment="Left">
-
-                            </Grid>
-                        </ScrollViewer>
-
-
+                        <TextBox Grid.Row="0" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="1" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="2" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="3" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="4" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="5" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
+                        <TextBox Grid.Row="6" Width="100" Style="{StaticResource TextBox.Rectangle.Graph.Complete}"/>
                     </Grid>
-                </ScrollViewer>
-                
-            </Grid>
-
+                </Grid>
+            </ScrollViewer>
         </Grid>
-    </ScrollViewer>
+
+    </Grid>
 </Page>

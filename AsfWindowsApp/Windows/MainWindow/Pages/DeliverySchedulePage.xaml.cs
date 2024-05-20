@@ -47,7 +47,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	}
 	public partial class DeliverySchedulePage : Page
 	{
-		const string token = "475b0031b70c2eb3bc7824d2bccafc7b0ecca9cbfffe258bb1a2c83d7b9d7703";
+		const string token = "be31ee5a8016709331fbec486f1bf841427157a81281bcd799deca6fc5d8055c";
 		Dictionary<string, string> colorToStyleMap = new Dictionary<string, string>
 		{
 			{ "green", "TextBox.Rectangle.Graph.Complete" }
@@ -80,7 +80,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 					{
 						var json = await response.Content.ReadAsStringAsync();
 						var blocks = JsonConvert.DeserializeObject<List<DeliveryBlock>>(json);
-						SuccesDeliveryLoad(blocks);
+						//SuccesDeliveryLoad(blocks);
 					}
 					else
 					{
@@ -134,8 +134,24 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 		}
 		private void SuccesDeliveryLoad(List<DeliveryBlock> blocks)
 		{
+			if (blocks.Count == 0)
+				return;
+
+			DateTime minDate = DateTime.MaxValue;
+			DateTime maxDate = DateTime.MinValue;
+
+
 			foreach (DeliveryBlock block in blocks)
 			{
+				DateTime startDate = DateTime.Parse(block.DateOfStart);
+				DateTime endDate = DateTime.Parse(block.DateOfEnd);
+
+				if (startDate < minDate)
+					minDate = startDate;
+
+				if (endDate > maxDate)
+					maxDate = endDate;
+
 				TextBox textBox = new TextBox();
 				textBox.Style = (Style)FindResource(colorToStyleMap[block.Color]);
 				textBox.Margin = StartPositionCalculate(DateTime.Parse(block.DateOfStart));
@@ -148,6 +164,66 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 
 				Deliveries.Children.Add(textBox);
 				Grid.SetRow(textBox, Deliveries.RowDefinitions.Count - 1);
+			}
+
+			//CreateTimeLine(minDate, maxDate);
+		}
+		private void CreateTimeLine(DateTime minDate, DateTime maxDate)
+		{
+			TimeSpan totalDays = maxDate - minDate;
+			int totalMonths = (maxDate.Year - minDate.Year) * 12 + maxDate.Month - minDate.Month + 1;
+
+			for (int i = 0; i < totalMonths; i++)
+			{
+				DateTime monthDate = minDate.AddMonths(i);
+				int daysInMonth = DateTime.DaysInMonth(monthDate.Year, monthDate.Month);
+
+				Grid monthGrid = new Grid();
+				monthGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40) });
+				monthGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40) });
+
+				TimeLine.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(daysInMonth * 20) });
+				Grid.SetColumn(monthGrid, i);
+				TimeLine.Children.Add(monthGrid);
+
+				TextBlock monthLabel = new TextBlock();
+				monthLabel.Style = (Style)FindResource("LabelStyle");
+				monthLabel.VerticalAlignment = VerticalAlignment.Top;
+				monthLabel.HorizontalAlignment = HorizontalAlignment.Left;
+				monthLabel.Margin = new Thickness(0, 24, 0, 0);
+				monthLabel.Text = monthDate.ToString("MMMM");
+
+				Grid.SetRow(monthLabel, 0);
+				monthGrid.Children.Add(monthLabel);
+
+				StackPanel datesPanel = new StackPanel();
+				datesPanel.Orientation = Orientation.Horizontal;
+				datesPanel.HorizontalAlignment = HorizontalAlignment.Left;
+				datesPanel.VerticalAlignment = VerticalAlignment.Center;
+
+				for (int j = 1; j <= daysInMonth; j++)
+				{
+					TextBox dateTextBox = new TextBox();
+					dateTextBox.Style = (Style)FindResource("TextBox.Circle.Date.Default");
+
+					string dayString = j < 10 ? j.ToString().PadLeft(2, '0') : j.ToString();
+					dateTextBox.Text = dayString;
+
+					DateTime currentDate = new DateTime(monthDate.Year, monthDate.Month, j);
+					if (currentDate.DayOfWeek == DayOfWeek.Saturday || currentDate.DayOfWeek == DayOfWeek.Sunday)
+					{
+						dateTextBox.Style = (Style)FindResource("TextBox.Circle.Date.Weekend");
+					}
+					if (currentDate.Date == DateTime.Today)
+					{
+						dateTextBox.Style = (Style)FindResource("TextBox.Circle.Date.CurrentDay");
+					}
+
+					datesPanel.Children.Add(dateTextBox);
+				}
+
+				Grid.SetRow(datesPanel, 1);
+				monthGrid.Children.Add(datesPanel);
 			}
 		}
 		private void ErrorDeliveryLoad()
