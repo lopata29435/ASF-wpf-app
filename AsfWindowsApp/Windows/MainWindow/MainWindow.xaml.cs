@@ -22,7 +22,7 @@ namespace AsfWindowsApp
 		public MainWindow()
 		{
 			InitializeComponent();
-			MainFrame.Navigate(new DeliverySchedulePage());
+			MainFrame.Navigate(new RequestsPage());
 		}
     }
 }

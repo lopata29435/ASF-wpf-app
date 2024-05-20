@@ -60,11 +60,17 @@
     </ApplicationDefinition>
     <Compile Include="Styles\Components\CustomTextBlocks.cs" />
     <Compile Include="Values\Route.cs" />
+    <Compile Include="Windows\MainWindow\Pages\ChangeRequestPage.xaml.cs">
+      <DependentUpon>ChangeRequestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow\Pages\DeliverySchedulePage.xaml.cs">
       <DependentUpon>DeliverySchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow\Pages\NewRequestPage.xaml.cs">
+      <DependentUpon>NewRequestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow\Pages\ProjectsPage.xaml.cs">
       <DependentUpon>ProjectsPage.xaml</DependentUpon>
@@ -138,11 +144,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\MainWindow\Pages\ChangeRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow\Pages\DeliverySchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow\Pages\NewRequestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

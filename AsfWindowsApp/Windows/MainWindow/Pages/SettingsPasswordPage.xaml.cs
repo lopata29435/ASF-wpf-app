@@ -21,7 +21,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	/// </summary>
 	public partial class SettingsPasswordPage : Page
 	{
-		string token = "394f657232f931de37e3c26626b9ef57da0262f38a046f501bb2ddf6e7dbb192";
+		string token = "aad17cda65915d890d27ba38c9129ca4926944cbda6644ad6d883f2088c72e47";
 		public SettingsPasswordPage()
 		{
 			InitializeComponent();
@@ -31,13 +31,6 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 			string password = Password.Text;
 			string new_password = NewPassword.Text;
 			string confirm_password = ConfirmPassword.Text;
-
-			/*if (new_password != confirm_password)
-			{
-				ConfirmPassword.Style = (Style)FindResource("TextBox.Rectangle.small-error");
-				ConfirmErrorText.Visibility = Visibility.Visible;
-			}*/
-			//if (new_password.Count() < 8 || !new_password.Any(x => 'A' <= x && x <= 'Z') || !new_password.Any(x => '0' <= x && x <= '9') || !new_password.Any(x => '0' <= x && x <= '9'))
 
 			HttpClient client = new HttpClient();
 
