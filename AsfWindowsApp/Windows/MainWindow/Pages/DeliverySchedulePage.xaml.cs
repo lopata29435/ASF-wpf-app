@@ -47,7 +47,7 @@ namespace AsfWindowsApp.Windows.MainWindow.Pages
 	}
 	public partial class DeliverySchedulePage : Page
 	{
-		const string token = "be31ee5a8016709331fbec486f1bf841427157a81281bcd799deca6fc5d8055c";
+		const string token = "475b0031b70c2eb3bc7824d2bccafc7b0ecca9cbfffe258bb1a2c83d7b9d7703";
 		Dictionary<string, string> colorToStyleMap = new Dictionary<string, string>
 		{
 			{ "green", "TextBox.Rectangle.Graph.Complete" }
